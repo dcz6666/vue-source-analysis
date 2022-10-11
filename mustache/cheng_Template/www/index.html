@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h5>我是index页面</h5>
+    <script src="/xuni/bundle.js"></script>
+    <script>
+        let templateStr =`
+            <ul>
+                {{#arr}}
+                    <li>
+                        {{name}}的爱好是：
+                        <ol>
+                            {{#hobbies}} 
+                                <li>{{.}}</li>
+                            {{/hobbies}} 
+                        </ol>
+                    </li>    
+                {{/arr}}
+            </ul>`
+        var data={
+            thing:"手机",
+            mood:"开心"
+        }
+        cheng_Template.render(templateStr,data)
+    </script>
+</body>
+</html>
